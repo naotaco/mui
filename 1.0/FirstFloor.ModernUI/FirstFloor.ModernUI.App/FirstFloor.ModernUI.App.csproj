@@ -108,6 +108,9 @@
     <Compile Include="Content\ModernFrame\Sample.xaml.cs">
       <DependentUpon>Sample.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\ApplicationPage.xaml.cs">
+      <DependentUpon>ApplicationPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\DpiAwareness.xaml.cs">
       <DependentUpon>DpiAwareness.xaml</DependentUpon>
     </Compile>
@@ -356,6 +359,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="MainWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\ApplicationPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

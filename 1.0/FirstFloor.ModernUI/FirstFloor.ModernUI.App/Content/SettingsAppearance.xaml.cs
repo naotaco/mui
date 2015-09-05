@@ -1,6 +1,7 @@
 ﻿using FirstFloor.ModernUI.Presentation;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -26,7 +27,27 @@ namespace FirstFloor.ModernUI.App.Content
             InitializeComponent();
 
             // a simple view model for appearance configuration
-            this.DataContext = new SettingsAppearanceViewModel();
+            var model = new SettingsAppearanceViewModel();
+            this.DataContext = model;
+            foreach(var t in model.Themes)
+            {
+                Debug.WriteLine(t.DisplayName);
+            }
+
+            //SetTheme("dark");
+        }
+
+        public void SetTheme(string name)
+        {
+            var model = this.DataContext as SettingsAppearanceViewModel;
+            foreach (var t in model.Themes)
+            {
+                Debug.WriteLine(t.DisplayName);
+                if (name == t.DisplayName)
+                {
+                    model.SelectedTheme = t;
+                }
+            }
         }
     }
 }
